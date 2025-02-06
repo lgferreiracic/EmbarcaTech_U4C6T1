@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "author": "Lucas Gabriel Ferreira",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-pi-pico-w", "id": "pico", "top": -3.25, "left": 3.55, "attrs": {} },
+    {
+      "type": "wokwi-neopixel-matrix",
+      "id": "neopixels",
+      "top": -150.2,
+      "left": -83.06,
+      "rotate": 180,
+      "attrs": { "rows": "5", "cols": "5", "matrixLayout": "serpentine" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 128.75,
+      "left": -76.8,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -29.4,
+      "left": -141,
+      "rotate": 90,
+      "attrs": { "color": "black" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": -29.4,
+      "left": -189,
+      "rotate": 90,
+      "attrs": { "color": "black" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 138.35,
+      "left": -76.8,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 147.95,
+      "left": -76.8,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 92.4,
+      "left": -178.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 92.4,
+      "left": -149.8,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 92.4,
+      "left": -121,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 233.54,
+      "left": -114.97,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 192.76, "left": -201.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "neopixels:DIN", "pico:GP7", "green", [ "v-19.2", "h-163.2", "v268.8", "h201.6" ] ],
+    [ "neopixels:VCC", "pico:VBUS", "red", [ "v-28.8", "h124.8", "v192" ] ],
+    [ "neopixels:GND", "pico:GND.8", "black", [ "v-19.2", "h105.6", "v163.2", "h-19.51" ] ],
+    [ "pico:GP5", "btn1:2.r", "green", [ "h-124.8", "v-32.05", "h0.2" ] ],
+    [ "pico:GND.1", "btn1:1.r", "black", [ "h-15.65", "v-12.85" ] ],
+    [ "pico:GND.2", "btn2:1.r", "black", [ "h-153.6", "v-48.2" ] ],
+    [ "pico:GP6", "btn2:2.r", "green", [ "h0" ] ],
+    [ "r1:2", "pico:GP11", "green", [ "h8.4", "v-7.6", "h19.2" ] ],
+    [ "r2:2", "pico:GP12", "green", [ "h27.6", "v-3.64" ] ],
+    [ "r3:2", "pico:GP13", "green", [ "h27.6", "v-9.64" ] ],
+    [ "led3:A", "r1:1", "green", [ "v0" ] ],
+    [ "led2:A", "r2:1", "green", [ "v0" ] ],
+    [ "led1:A", "r3:1", "green", [ "v0" ] ],
+    [ "led3:C", "pico:GND.5", "black", [ "v69.8", "h202", "v-35.19" ] ],
+    [ "led2:C", "pico:GND.5", "black", [ "v69.8", "h230.8", "v-35.19" ] ],
+    [ "led1:C", "pico:GND.5", "black", [ "v69.8", "h259.6", "v-35.19" ] ],
+    [ "oled1:VCC", "vcc1:VCC", "red", [ "v0" ] ],
+    [ "oled1:GND", "pico:GND.4", "black", [ "v0" ] ],
+    [ "oled1:SCL", "pico:GP15", "green", [ "v0" ] ],
+    [ "oled1:SDA", "pico:GP14", "blue", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
