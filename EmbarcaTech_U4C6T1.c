@@ -283,8 +283,8 @@ int main()
     ssd1306_fill(&ssd, !cor); // Limpa o display
     ssd1306_rect(&ssd, 3, 3, 122, 58, cor, !cor); // Desenha um retângulo
     ssd1306_draw_string(&ssd, "CEPEDI   TIC37", 8, 10); // Desenha uma string
-    ssd1306_draw_string(&ssd, "EMBARCATECH", 20, 30); // Desenha uma string
-    ssd1306_draw_string(&ssd, "U4C6T1", 60, 48); // Desenha uma string      
+    ssd1306_draw_string(&ssd, "Caractere: a", 20, 30); // Desenha uma string
+    ssd1306_draw_string(&ssd, "Sei la", 60, 48); // Desenha uma string      
     ssd1306_send_data(&ssd); // Atualiza o display
 
     sleep_ms(1000);
