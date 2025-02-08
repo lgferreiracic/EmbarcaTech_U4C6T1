@@ -61,6 +61,7 @@ target_link_libraries(EmbarcaTech_U4C6T1
             hardware_timer
             hardware_pio
             hardware_clocks
+            hardware_uart
         )
 
 pico_add_extra_outputs(EmbarcaTech_U4C6T1)

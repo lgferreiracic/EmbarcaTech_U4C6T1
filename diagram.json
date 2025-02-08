@@ -80,6 +80,8 @@
     { "type": "wokwi-vcc", "id": "vcc1", "top": 192.76, "left": -201.6, "attrs": {} }
   ],
   "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
     [ "neopixels:DIN", "pico:GP7", "green", [ "v-19.2", "h-163.2", "v268.8", "h201.6" ] ],
     [ "neopixels:VCC", "pico:VBUS", "red", [ "v-28.8", "h124.8", "v192" ] ],
     [ "neopixels:GND", "pico:GND.8", "black", [ "v-19.2", "h105.6", "v163.2", "h-19.51" ] ],
