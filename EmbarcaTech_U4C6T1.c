@@ -283,6 +283,7 @@ void show_display_2(){
     ssd1306_send_data(&ssd); // Atualiza o display
 }
 
+// Função para converter um caractere para binário
 char* get_binary(char c){
     static char binary[9];
     binary[0] = '\0';
@@ -293,6 +294,7 @@ char* get_binary(char c){
     return binary;
 }
 
+// Função para converter um caractere para hexadecimal
 char* get_hex(char c){
     static char hex[3];
     sprintf(hex, "%02X", c);
@@ -387,7 +389,9 @@ int main()
   gpio_set_irq_enabled_with_callback(button_b, GPIO_IRQ_EDGE_FALL, true, &gpio_irq_handler);
 
   show_display_0();
-
+  printf("UART is ready\r\n");
+  printf("Press button A or B to change the LED state\r\n");
+  printf("Press any key to show the character in the display\r\n");
   while (true){
     if(stdio_usb_connected()){
             if(scanf("%c", &character) == 1){
